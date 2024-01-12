@@ -1,21 +1,25 @@
 import logo from './source_files/logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function Neke() {
+  const [tekst, setText]=useState(false);
+
   return (
     <>
       <div>
         <p id='nekaj'>
           Neki tekst z druge funkcije
         </p>
-        Neke drugi tekst
+        <button onClick={(e)=>{setText(!tekst)}}>klikni me</button>
       </div>
-      <span>nekaj</span>
+      <span>{tekst? "prvi tekst": "drugi tekst"}</span>
     </>
   )
 }
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
