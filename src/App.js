@@ -1,22 +1,7 @@
 import logo from './source_files/logo.svg';
 import './App.css';
-import { useState } from 'react';
-
-function Neke() {
-  const [tekst, setText]=useState(false);
-
-  return (
-    <>
-      <div>
-        <p id='nekaj'>
-          Neki tekst z druge funkcije
-        </p>
-        <button onClick={(e)=>{setText(!tekst)}}>klikni me</button>
-      </div>
-      <span>{tekst? "prvi tekst": "drugi tekst"}</span>
-    </>
-  )
-}
+import Neke from './fragment1/Neke.jsx';
+import Frag from './fragment2/Frag.jsx';
 
 function App() {
 
@@ -28,6 +13,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Neke/>
+        <Frag/>
         <a
           className="App-link"
           href="https://reactjs.org"
