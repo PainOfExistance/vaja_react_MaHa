@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 function Neke() {
   const [tekst, setText]=useState(false);
@@ -6,6 +7,7 @@ function Neke() {
 
   useEffect((e) => {
     reference.current++;
+    Cookies.set("value", reference.current.toString());
   }, [tekst])
   
   return (
@@ -18,6 +20,7 @@ function Neke() {
       </div>
       <span>{tekst? "prvi tekst": "drugi tekst"}</span>
       <div>{reference.current}</div>
+      <div>{Cookies.get("value")}</div>
     </>
   )
 }
